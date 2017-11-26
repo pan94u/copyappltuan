@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>HELLO WORLD</title>
+    <script type="text/javascript"  src='javascripts/jquery-3.2.1.min.js'></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="stylesheets/appletuan.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+	<div class="alert alert-warning" id="tips">获取报价中...</div>
+	<div class="box container"></div>
+</body>
+<script type="text/javascript">
+	var now = new Date();
+	var d = now.toLocaleDateString().split("/");
+	var d1 = d[0]+"-"+d[1]+"-"+d[2];
+	var d2 = "2017-09-10"
+	function DateDiff(sDate1, sDate2) { //sDate1和sDate2是2002-12-18格式  
+		var aDate, oDate1, oDate2, iDays
+		aDate = sDate1.split("-")
+		oDate1 = new Date(aDate[1] + '-' + aDate[2] + '-' + aDate[0]) //转换为12-18-2002格式  
+		aDate = sDate2.split("-")
+		oDate2 = new Date(aDate[1] + '-' + aDate[2] + '-' + aDate[0])
+		iDays = parseInt(Math.abs(oDate1 - oDate2) / 1000 / 60 / 60 / 24) //把相差的毫秒数转换为天数  
+		return iDays
+	}
+
+	$.ajax({
+		data:{page:DateDiff(d1,d2)+1,cid:GetRequest()["cid"]},
+		dataType:"json",
+		type:"get",
+		url:"/getJobs",
+		success:function (data) {
+			$("#tips").removeClass("alert-warning");
+			$("#tips").addClass("alert-success");
+			$("#tips").text("加载完成,");
+			$("#tips").fadeOut(2000);
+			$(".box").append(data.result[0]);
+			$("a").each(function() {
+				this.href="Javascript: void(0)";
+			});
+			$(".header>a:eq(0)")[0].href=location.origin;
+			$(".header>a:eq(1)")[0].href=location.href+"?cid=10";
+			$(".header>a:eq(2)")[0].href=location.href+"?cid=8";
+			$(".header>a:eq(3)")[0].href=location.href+"?cid=11";
+			$(".header>a:eq(4)")[0].href=location.href+"?cid=9";
+		}
+	})
+
+	function GetRequest() {
+		var url = location.search; //获取url中"?"符后的字串
+		var theRequest = new Object();
+		if (url.indexOf("?") != -1) {
+		  var str = url.substr(1);
+		  strs = str.split("&");
+		  for(var i = 0; i < strs.length; i ++) {
+		     theRequest[strs[i].split("=")[0]]=(strs[i].split("=")[1]);
+		  }
+		}
+   		return theRequest;
+	}
+</script>
+
+</html>

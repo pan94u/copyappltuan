@@ -1,0 +1,18 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(type='text/javascript' src='javascripts/jquery-3.2.1.min.js').
+    script(type='text/javascript').
+     	- $.ajax({
+     		data:{page:"67"},
+     		dataType: "json",
+     		type: "get",
+     		url: "/getJobs",
+     		sunccess: function(data){
+     			console.log(#{data});
+     		}
+     	})
+  body
+    block content
