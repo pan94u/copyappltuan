@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <body>
-	<div class="alert alert-warning" id="tips">获取报价中...</div>
+	<div class="alert alert-warning" id="tips" style="text-align: center;">获取报价中...</div>
 	<div class="box container"></div>
 </body>
 <script type="text/javascript">
@@ -28,15 +28,15 @@
 	}
 
 	$.ajax({
-		data:{page:DateDiff(d1,d2)+1,cid:GetRequest()["cid"]},
+		data:{page:DateDiff(d1,d2),cid:GetRequest()["cid"]},
 		dataType:"json",
 		type:"get",
 		url:"/getJobs",
 		success:function (data) {
 			$("#tips").removeClass("alert-warning");
 			$("#tips").addClass("alert-success");
-			$("#tips").text("加载完成,");
-			$("#tips").fadeOut(2000);
+			$("#tips").text("加载完成，最新报价日期："+d1);
+			//$("#tips").fadeOut(2000);
 			$(".box").append(data.result[0]);
 			$("a").each(function() {
 				this.href="Javascript: void(0)";
