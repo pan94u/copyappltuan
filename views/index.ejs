@@ -410,7 +410,7 @@ a.back_to_price_table {
 		type:"get",
 		url:"/getJobs",
 		success:function (data) {
-      document.title = data.result["date"];
+      document.title = "胖胖数码"+data.result["date"];
 			$("#tips").removeClass("alert-warning");
 			$("#tips").addClass("alert-success");
 			$("#tips").text("加载完成!");
