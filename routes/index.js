@@ -7,7 +7,7 @@ var result = {};
 /* GET home page. */
 router.get('/', function(req, res, next) {
 	res.render('index', {
-		title: 'getAppleTuan'
+		title: '胖胖数码今日报价'
 	});
 });
 
