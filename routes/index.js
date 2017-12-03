@@ -57,7 +57,9 @@ router.get('/getJobs', function(req, res, next) {
 						var data = Buffer.concat(chunks, size);
 						var html = data.toString();
 						var $ = cheerio.load(html);
+						$('.header').remove();
 						var content = $('.col-md-8 .box').eq(1).html();
+						content = content.replace(/(<\/?a.*?>)|(<\/?span.*?>)/g, '<span>');
 						result["html"] = content;
 						Res.json({
 							result: result
