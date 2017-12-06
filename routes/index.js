@@ -58,11 +58,8 @@ router.get('/getJobs', function(req, res, next) {
 						var html = data.toString();
 						var $ = cheerio.load(html);
 						$('.header').remove();
-<<<<<<< HEAD
 						$('.product-series-heading span').text('(参考报价，根据市场价格随时更新，下单联系微信）');
-=======
-						$('.product-series-heading>span').text('(价格实时变动,下单请联系微信)');
->>>>>>> 7fd2bc5a07dfaf2a6c8e42db67eb6c229c0c66b4
+						('.product-series-heading span').attr('style', 'color:#999;')
 						var content = $('.col-md-8 .box').eq(1).html();
 						content = content.replace(/(<\/?a.*?>)|(<\/?span.*?>)/g, '<span>');
 						result["html"] = content;
