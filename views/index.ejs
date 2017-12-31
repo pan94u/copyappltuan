@@ -461,9 +461,25 @@ a.back_to_price_table {
     </div>
   </div>
 </div>
+<div class="modal fade" id="huishou" tabindex="-1" role="dialog" aria-labelledby="huishouLabel">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h4 class="modal-title" id="myModalLabel">2018，大吉大利！</h4>
+    </div>
+    <div class="modal-body">
+      <img src="img/huishou.jpg" id="huishou" style="width: 100%;">
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary">长按换钱</button>
+    </div>
+  </div>
+</div>
   <%- include("./footer.ejs") %>
 </body>
 <script type="text/javascript">
+  $('#huishou').modal({});
   if(device.mobile()){  
     $(".box").removeClass("container");
     $(".box").addClass("container-fluid");
