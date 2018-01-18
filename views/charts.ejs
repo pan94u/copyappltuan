@@ -8,16 +8,182 @@
         <%= title %>
     </title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <script type="text/javascript" src='javascripts/jquery-3.2.1.min.js'></script>
+    <script type="text/javascript" src='/javascripts/jquery-3.2.1.min.js'></script>
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="stylesheets/appletuan.css">
+    <link color="#5bbad5" href="/safari-pinned-tab.svg" rel="mask-icon" />
+    <link rel="alternate" type="application/atom+xml" title="ATOM" href="/topics.atom" />
+    <meta name="csrf-param" content="authenticity_token" />
+    <meta name="csrf-token" content="2d3qXq6lw4kflWek0/I7IHEo49Eg34H1wCnpDnAUbdIcNkd0pV4fnmEGCvR/J50LONkvsezTIPbyemdPhp/r4g==" />
+    <link rel="stylesheet" href="/stylesheets/appletuan.css">
     <script type="text/javascript" src='https://cdn.bootcss.com/device.js/0.2.7/device.js'></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
 </head>
 
 <body>
-    <div id="price_charts">Hello Charts</div>
-</body>
-<script type="text/javascript">
+    <%- include("./header.ejs") %>
+    <img src="/img/loading-large.gif" id="largeloading" style="left: 47%;top: 37%;position: absolute;" />
+    <div class="box container">
+        <div class="header">
+            <div class="pull-right trends"><a  class="" id="week" href="">周趋势</a>&nbsp;&nbsp;<a class="" id="month" href="">月趋势</a>&nbsp;&nbsp;<a class="" id="all">全部趋势</a></div>
+            <a class="back_to_price_table" href="/">&lt; 返回报价单</a>
+        </div>
+        <div class="cell">
+            <div id="chart-container"></div>
+        </div>
+    </div>
+<script>
+    function getdu(){
+        switch(GetRequest()["type"]){
+            case "all":
+                return "all";
+                break;
+            case "week":
+                return 7;
+                break;
+            case "month":
+                return 30;
+                break;
+            default:
+                return 7;
+                break;
+        }
+    }
+    function getid(){
+        var href = location.href;
+        var reg = /product_models.*?\/(.*?)\//;
+        return href.match(reg)[1];
+    }
+
+    function GetRequest() {
+        var url = location.search; //获取url中"?"符后的字串
+        var theRequest = new Object();
+        if (url.indexOf("?") != -1) {
+          var str = url.substr(1);
+          strs = str.split("&");
+          for(var i = 0; i < strs.length; i ++) {
+             theRequest[strs[i].split("=")[0]]=(strs[i].split("=")[1]);
+          }
+        }
+        return theRequest;
+    }
+    $(function() {
+        var heightvalue = $(window).height();
+        var widthvalue = $(window).width();
+        var type = GetRequest()["type"]||"week";
+        $("#largeloading").css("top",heightvalue/2-64+"px");
+        $("#largeloading").css("left",widthvalue/2-64+"px");
+        $("#largeloading").css("display","block");
+        $("#"+type).addClass("active");
+        $("#month")[0].href = "/product_models/"+getid()+"/prices?dpr_id=178&type=month";
+        $("#week")[0].href = "/product_models/"+getid()+"/prices?dpr_id=178&type=week";
+        $("#all")[0].href = "/product_models/"+getid()+"/prices?dpr_id=178&type=all";
+        Highcharts.theme = {
+            colors: ['#7cb5ec', '#f7a35c', '#90ee7e', '#7798BF', '#aaeeee', '#ff0066', '#eeaaee',
+                '#55BF3B', '#DF5353', '#7798BF', '#aaeeee'
+            ],
+            chart: {
+                backgroundColor: null,
+                style: {
+                    fontFamily: 'Dosis, sans-serif'
+                }
+            },
+            title: {
+                style: {
+                    fontSize: '16px',
+                    fontWeight: 'bold',
+                    textTransform: 'uppercase'
+                }
+            },
+            tooltip: {
+                borderWidth: 0,
+                backgroundColor: 'rgba(219,219,216,0.8)',
+                shadow: false
+            },
+            legend: {
+                itemStyle: {
+                    fontWeight: 'bold',
+                    fontSize: '13px'
+                }
+            },
+            xAxis: {
+                gridLineWidth: 1,
+                labels: {
+                    style: {
+                        fontSize: '12px'
+                    }
+                }
+            },
+            yAxis: {
+                minorTickInterval: 'auto',
+                title: {
+                    style: {
+                        textTransform: 'uppercase'
+                    }
+                },
+                labels: {
+                    style: {
+                        fontSize: '12px'
+                    }
+                }
+            },
+            plotOptions: {
+                candlestick: {
+                    lineColor: '#404048'
+                }
+            },
+
+
+            // General
+            background2: '#F0F0EA'
+
+        };
+
+        // Apply the theme
+        Highcharts.setOptions(Highcharts.theme);
+
+        $.ajax({
+                data:{du:getdu(),id:getid()},
+                dataType:"json",
+                type:"get",
+                url:"/getCharts",
+                success:function (data) {
+                    $("#largeloading").remove();
+                    data = jQuery.parseJSON(data.result);
+                    var d2 = [];
+                    $.each(data, function(i, v) {
+                        var v2 = {
+                            name: v['name'],
+                            color: v['color'],
+                            data: []
+                        };
+                        $.each(v["data"], function(j, m) {
+                            var dt = Date.UTC(m[0][0], m[0][1], m[0][2]);
+                            v2['data'].push([dt, m[1]])
+                        });
+                        d2.push(v2);
+                    });
+
+                    Highcharts.chart('chart-container', {
+                        title: {
+                            text: '价格趋势',
+                        },
+                        xAxis: {
+                            type: 'datetime',
+                        },
+                        yAxis: {
+                            title: {
+                                text: '价格 (CNY)',
+                            },
+                        },
+                        series: d2,
+                    })
+                },
+            error:function(err){
+              alert("获取失败!");
+            }
+        });
+    })
 </script>
+</body>
 
 </html>
