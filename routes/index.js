@@ -10,9 +10,6 @@ router.get('/', function(req, res, next) {
 		title: '胖胖数码今日报价'
 	});
 });
-router.get('/charts', function(req, res, next) {
-
-});
 
 router.get('/product_models/:id/prices', function(req, res, next) {
 	res.render('charts', {
@@ -23,7 +20,9 @@ router.get('/product_models/:id/prices', function(req, res, next) {
 router.get('/getCharts', function(req, res, next) {
 	var Res = res;
 	var chart_url = 'http://www.appletuan.com/product_models/' + req.param('id') + '/prices.json?tag=&du=' + req.param('du');
-	http.get(chart_url, function(res) {
+	var title_url = 'http://www.appletuan.com/product_models/' + req.param('id') + '/prices';
+	var result = {};
+	http.get(title_url, function(res) {
 		var chunks = [];
 		var size = 0;
 		res.on('data', function(chunk) {
@@ -32,10 +31,24 @@ router.get('/getCharts', function(req, res, next) {
 		});
 		res.on('end', function() {
 			var data = Buffer.concat(chunks, size);
-			var result = data.toString();
-			Res.json({
-				result: result
-			});
+			var html = data.toString();
+			var $ = cheerio.load(html);
+			result["title"] = $.html('.highcharts-title');
+			http.get(chart_url, function(res) {
+				var chunks = [];
+				var size = 0;
+				res.on('data', function(chunk) {
+					chunks.push(chunk);
+					size += chunk.length;
+				});
+				res.on('end', function() {
+					var data = Buffer.concat(chunks, size);
+					result["charts"] = data.toString();
+					Res.json({
+						result: result
+					});
+				});
+			})
 		});
 	})
 });

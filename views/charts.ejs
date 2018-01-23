@@ -148,7 +148,7 @@
                 url:"/getCharts",
                 success:function (data) {
                     $("#largeloading").remove();
-                    data = jQuery.parseJSON(data.result);
+                    data = jQuery.parseJSON(data.result["charts"]);
                     var d2 = [];
                     $.each(data, function(i, v) {
                         var v2 = {
