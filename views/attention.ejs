@@ -3,13 +3,14 @@
 <head>
 	<meta name="description" Content="今日报价,胖胖数码,胖胖数码今日报价,pan9">
 	<title>购买必读</title>
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
 	<script type="text/javascript"  src='javascripts/jquery-3.2.1.min.js'></script>
     <script type="text/javascript"  src='javascripts/bootstrap.min.js'></script>
     <link rel="stylesheet" href="stylesheets/appletuan.css">
 </head>
 <body>
 	<%- include("./header.ejs") %>
-	<div class="alert alert-warning alert-dismissible" style="text-align: center;padding: 5px;margin: 0px auto;">
+	<div class="alert alert-warning alert-dismissible" style="text-align: center;padding: 5px;margin: 0px auto;" id="top-attention">
 		<!-- <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button> -->
 		<p>本页的内容需要您<b>仔细阅读</b>，如有异议，<b>请勿下单</b></p><p>您在胖胖数码的<b>下单行为</b>将被默认视为<b>已阅读并知悉</b>本页面内容</p>
 		<button type="button" class="btn btn-success btn-sm" data-dismiss="alert" aria-label="Close" style="margin-top: 3px;"><span aria-hidden="true">我已了解</span></button>
@@ -20,13 +21,15 @@
 		    <div class="panel-heading" role="tab" id="headingOne">
 		      <h4 class="panel-title">
 		        <a role="button" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-		          Collapsible Group Item #1
+		          写在前面
 		        </a>
 		      </h4>
 		    </div>
 		    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
 		      <div class="panel-body">
-		        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+		      	<p>2013~2018，5年的沉淀让我们可以一直见面。</p>
+		        <p>我们为大家提供<b>原封正品</b>的全新机，和经过<b>严格检验</b>的优质二手。同时也接受数码产品以及奢侈品等物品的回收。</p>
+		        <p>网站的价格实时更新，价格透明，所有机器概不议价，运费统一<b>顺丰到付</b>。</p>
 		      </div>
 		    </div>
 		  </div>
@@ -34,13 +37,27 @@
 		    <div class="panel-heading" role="tab" id="headingTwo">
 		      <h4 class="panel-title">
 		        <a class="collapsed" role="button" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-		          Collapsible Group Item #2
+		          Apple产品的保修事宜
 		        </a>
 		      </h4>
 		    </div>
 		    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
 		      <div class="panel-body">
-		        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+		        <p>我们提供的Apple全新机均为正规渠道供应，与您在Apple Store或正规经销商处购买一致。</p>
+		        <p>胖胖数码售出的Apple产品均可享受一年的官方保修(受中国地区三包法规定，MacBook、iMac国行保修为两年)。</p>
+		        <p>单独出售的Apple原装配件及周边产品利润低下，无保修和退换服务，但您可在收到配件的15天内针对质量问题提出更换要求。</p>
+		        <p>胖胖数码<b>无法提供Apple官网的14天无理由退换服务</b>，其他平台和经销商亦是如此。</p>
+		        <p>Apple产品在保修内出现质量问题，您可自行预约Genius Bar并到店检测并维修或在Apple授权店获取保修服务。</p>
+		        <p>如您需要我们协助帮助，欢迎联系。但代为保修需要支付一定的服务费用，您也可以在TB等平台寻求代保修服务。</p>
+		        <p><span class="glyphicon glyphicon-star"></span><span>以下情况不在Apple的保修范围内：</span></p>
+		        <div class="alert alert-warning" role="alert">
+		        	<p>产品自身的硬件设计问题和瑕疵、如 iPhone/iPad 正常暖屏、阴阳屏、屏幕三个点以下及原厂的外观瑕疵；</p>
+					<p>Macbook出厂就有的外观瑕疵（极少），以及键盘手感、屏幕大小等用户体验问题；</p>
+					<p>系统及软件引起的问题、以及不正当使用（如ID被盗）引起的系统问题；</p>
+					<p>外力作用造成的损伤、进水、受潮、雷击、静电引起的问题；</p>
+					<p>电信运营商信号及SIM卡引起的问题（偶尔发生）；</p>
+		        </div>
+		        <p></p>
 		      </div>
 		    </div>
 		  </div>
@@ -48,13 +65,18 @@
 		    <div class="panel-heading" role="tab" id="headingThree">
 		      <h4 class="panel-title">
 		        <a class="collapsed" role="button" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-		          Collapsible Group Item #3
+		          Apple产品的注意事项
 		        </a>
 		      </h4>
 		    </div>
 		    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
 		      <div class="panel-body">
-		        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+		        <p>我们强烈建议您在购买前充分体验并了解自己的需求，如果您在购买后想退货，我们会尽量配合。</p>
+		        <p>所有Apple产品（不包含原装周边、配件），在收件验货的时候，原封的产品在未拆封、拆封的产品在未激活、完全无损的情况下，都可以直接拒收退回，邮费及相关差价需自行承担。</p>
+		        <p>国行的Apple手机通常为移动/联通/电信全网通。</p>
+		        <p>港行的Apple手机通常为移动/联通双网通。</p>
+		        <p>美行的Apple手机通常为移动/联通/电信全网通。</p>
+		        <p>Apple产品序列号查询地址：<a href="https://checkcoverage.apple.com/cn/zh/" target="_blank">https://checkcoverage.apple.com/cn/zh/</a></p>
 		      </div>
 		    </div>
 		  </div>
@@ -67,6 +89,21 @@
 </body>
 </html>
 <style type="text/css">
+@media (min-width: 992px) {
+  .col-md-offset-2 {
+    width: 79%;
+  }
+}
+@media (min-width: 992px) {
+  .col-md-offset-2 {
+    margin-left: 9.6666666667%;
+  }
+}
+@media only screen and (max-width: 500px){
+  #contactme{
+    width: 260px;
+  }
+}
 	.attention{
 		margin-top: 10px;
 	}
