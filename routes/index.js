@@ -11,6 +11,10 @@ router.get('/', function(req, res, next) {
 	});
 });
 
+router.get('/attention', function(req, res, next) {
+	res.render('attention');
+});
+
 router.get('/product_models/:id/prices', function(req, res, next) {
 	res.render('charts', {
 		title: '胖胖数码 - 趋势图'

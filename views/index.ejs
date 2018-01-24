@@ -6,7 +6,7 @@
     <title><%= title %></title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <script type="text/javascript"  src='javascripts/jquery-3.2.1.min.js'></script>
-    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script type="text/javascript"  src='javascripts/bootstrap.min.js'></script>
     <link rel="stylesheet" href="stylesheets/appletuan.css">
     <script type="text/javascript"  src='https://cdn.bootcss.com/device.js/0.2.7/device.js'></script>
     
@@ -470,14 +470,13 @@ a.back_to_price_table {
       <img src="img/huishou.jpg" id="huishou" style="width: 100%;">
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-primary">长按换钱</button>
+      <button type="button" class="btn btn-primary" data-dismiss="modal" aria-label="Close">长按换钱</button>
     </div>
   </div>
 </div>
   <%- include("./footer.ejs") %>
 </body>
 <script type="text/javascript">
-  //alert(device.mobile());
   $('#huishou').modal({});
   if(device.mobile()){  
     $(".box").removeClass("container");
