@@ -20,7 +20,7 @@
 		  <div class="panel panel-default">
 		    <div class="panel-heading" role="tab" id="headingOne">
 		      <h4 class="panel-title">
-		        <a role="button" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+		        <a role="button" data-toggle="collapse" href="#collapseOne" data-parent="#accordion" aria-expanded="true" aria-controls="collapseOne">
 		          写在前面
 		        </a>
 		      </h4>
@@ -29,14 +29,15 @@
 		      <div class="panel-body">
 		      	<p>2013~2018，5年的沉淀让我们可以一直见面。</p>
 		        <p>我们为大家提供<b>原封正品</b>的全新机，和经过<b>严格检验</b>的优质二手。同时也接受数码产品以及奢侈品等物品的回收。</p>
-		        <p>网站的价格实时更新，价格透明，所有机器概不议价，运费统一<b>顺丰到付</b>。</p>
+		        <p>网站的价格实时更新，所有机器概不议价，报价为<b>不含税价格</b>，运费统一<b>顺丰到付</b>。</p>
+		        <p>如需开具发票，请联系客服补款并提供公司名称及税号。我们暂时只支持开具纸质增值税普通发票。</p>
 		      </div>
 		    </div>
 		  </div>
 		  <div class="panel panel-default">
 		    <div class="panel-heading" role="tab" id="headingTwo">
 		      <h4 class="panel-title">
-		        <a class="collapsed" role="button" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+		        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
 		          Apple产品的保修事宜
 		        </a>
 		      </h4>
@@ -64,19 +65,61 @@
 		  <div class="panel panel-default">
 		    <div class="panel-heading" role="tab" id="headingThree">
 		      <h4 class="panel-title">
-		        <a class="collapsed" role="button" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+		        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
 		          Apple产品的注意事项
 		        </a>
 		      </h4>
 		    </div>
 		    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
 		      <div class="panel-body">
-		        <p>我们强烈建议您在购买前充分体验并了解自己的需求，如果您在购买后想退货，我们会尽量配合。</p>
+		        <p>我们强烈建议您在购买前充分体验并了解自己的需求，如果您在购买后想退货，我们会尽力配合。</p>
 		        <p>所有Apple产品（不包含原装周边、配件），在收件验货的时候，原封的产品在未拆封、拆封的产品在未激活、完全无损的情况下，都可以直接拒收退回，邮费及相关差价需自行承担。</p>
-		        <p>国行的Apple手机通常为移动/联通/电信全网通。</p>
-		        <p>港行的Apple手机通常为移动/联通双网通。</p>
-		        <p>美行的Apple手机通常为移动/联通/电信全网通。</p>
+		        <p><b>国行</b>的Apple手机通常为<b>移动/联通/电信全网通</b>。</p>
+		        <p><b>港行</b>的Apple手机通常为<b>移动/联通双网通</b>。</p>
+		        <p><b>美行</b>的Apple手机通常为<b>移动/联通/电信全网通</b>。</p>
 		        <p>Apple产品序列号查询地址：<a href="https://checkcoverage.apple.com/cn/zh/" target="_blank">https://checkcoverage.apple.com/cn/zh/</a></p>
+		      </div>
+		    </div>
+		  </div>
+		  <div class="panel panel-default">
+		    <div class="panel-heading" role="tab" id="headingFour">
+		      <h4 class="panel-title">
+		        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+		          其他品牌的数码产品
+		        </a>
+		      </h4>
+		    </div>
+		    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+		      <div class="panel-body">
+		        <p>我们提供三星、小米、华为、OPPO、VIVO、魅族、中兴、美图秀秀等主流品牌机型的供应。</p>
+		        <p>这些产品均为国行原封，来自正规渠道并带有官方保修。</p>
+		        <p>每个品牌都有不同的保修政策。如需协助，欢迎联系。</p>
+		        <p>OPPO、VIVO只卖熟客。</p>
+		      </div>
+		    </div>
+		  </div>
+		  <div class="panel panel-default">
+		    <div class="panel-heading" role="tab" id="ershou">
+		      <h4 class="panel-title">
+		        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseershou" aria-expanded="false" aria-controls="collapseershou">
+		          关于二手
+		        </a>
+		      </h4>
+		    </div>
+		    <div id="collapseershou" class="panel-collapse collapse" role="tabpanel" aria-labelledby="ershou">
+		      <div class="panel-body">
+		        <p>我们提供苹果等主流机型的二手数码产品，大多数为苹果手机。</p>
+		        <p>所有的产品均经过专业检测，保证无进水、维修等情况的出现。(被维修过的机器会在发布时标注)</p>
+		        <p>二手设备一经出售，均不以不喜欢或者成色不满意等理由退换。</p>
+		        <p>我们提供自您签收之日起15天的非人为质量问题的保修服务。有标签的二手机器，需要保留标签方可享受二手保修服务。</p>
+		        <p><span class="glyphicon glyphicon-star"></span>成色说明：</p>
+		        <ul class="list-group">
+				  <li class="list-group-item list-group-item-warning">99新：无使用痕迹，外观磕碰，基本类似新机。</li>
+				  <li class="list-group-item list-group-item-warning">靓机：95新以上，整体外观成色好。</li>
+				  <li class="list-group-item list-group-item-warning">95新：正常使用痕迹，外观允许轻微磕碰。</li>
+				  <li class="list-group-item list-group-item-warning">9新：外壳有磕碰，屏幕可能轻微痕迹</li>
+				</ul>
+				<p>二手产品除公司批量采购外，恕不开具购机发票。</p>
 		      </div>
 		    </div>
 		  </div>
@@ -89,22 +132,7 @@
 </body>
 </html>
 <style type="text/css">
-@media (min-width: 992px) {
-  .col-md-offset-2 {
-    width: 79%;
-  }
+.attention{
+	margin-top: 10px;
 }
-@media (min-width: 992px) {
-  .col-md-offset-2 {
-    margin-left: 9.6666666667%;
-  }
-}
-@media only screen and (max-width: 500px){
-  #contactme{
-    width: 260px;
-  }
-}
-	.attention{
-		margin-top: 10px;
-	}
 </style>
