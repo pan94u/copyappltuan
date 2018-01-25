@@ -3,7 +3,6 @@ var router = express.Router();
 var http = require('http');
 var cheerio = require('cheerio');
 var path;
-var result = {};
 /* GET home page. */
 router.get('/', function(req, res, next) {
 	res.render('index', {
@@ -58,6 +57,7 @@ router.get('/getCharts', function(req, res, next) {
 });
 
 router.get('/getJobs', function(req, res, next) {
+	var result = {};
 	var Res = res;
 	var get_url = 'http://www.appletuan.com/page/about';
 	var url = 'http://www.appletuan.com';
