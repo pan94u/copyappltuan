@@ -23,7 +23,7 @@ router.get('/product_models/:id/prices', function(req, res, next) {
 router.get('/getCharts', function(req, res, next) {
 	var Res = res;
 	var chart_url = 'http://www.appletuan.com/product_models/' + req.param('id') + '/prices.json?tag=&du=' + req.param('du');
-	var title_url = 'http://www.appletuan.com/product_models/' + req.param('id') + '/prices';
+	var title_url = 'http://www.appletuan.com/product_models/' + req.param('id') + '/prices?dpr_id=' + req.param('dpr_id');
 	var result = {};
 	http.get(title_url, function(res) {
 		var chunks = [];
@@ -36,7 +36,13 @@ router.get('/getCharts', function(req, res, next) {
 			var data = Buffer.concat(chunks, size);
 			var html = data.toString();
 			var $ = cheerio.load(html);
-			result["title"] = $.html('.highcharts-title');
+			var allscript = $('html').find('script');
+			allscript.each(function(i, elem) {
+				var elemstr = $(elem).html();
+				if (elemstr.match('Highcharts.theme')) {
+					result["title"] = elemstr;
+				}
+			});
 			http.get(chart_url, function(res) {
 				var chunks = [];
 				var size = 0;

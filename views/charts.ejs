@@ -32,6 +32,9 @@
         </div>
     </div>
 <script>
+    var id = getid();
+    var du = getdu();
+    var dpr_id = GetRequest()["dpr_id"]
     function getdu(){
         switch(GetRequest()["type"]){
             case "all":
@@ -66,6 +69,12 @@
         }
         return theRequest;
     }
+
+    function checktitle(title){
+        var reg = new RegExp(/Highcharts\.chart\(\'chart-container\'\, \{\n      title\: \{\n        text\: \'([\s\S]*?)'/);
+        return title.match(reg)[1];
+    }
+
     $(function() {
         var heightvalue = $(window).height();
         var widthvalue = $(window).width();
@@ -74,9 +83,9 @@
         $("#largeloading").css("left",widthvalue/2-64+"px");
         $("#largeloading").css("display","block");
         $("#"+type).addClass("active");
-        $("#month")[0].href = "/product_models/"+getid()+"/prices?dpr_id=178&type=month";
-        $("#week")[0].href = "/product_models/"+getid()+"/prices?dpr_id=178&type=week";
-        $("#all")[0].href = "/product_models/"+getid()+"/prices?dpr_id=178&type=all";
+        $("#month")[0].href = "/product_models/"+id+"/prices?dpr_id="+ dpr_id +"&type=month";
+        $("#week")[0].href = "/product_models/"+id+"/prices?dpr_id="+ dpr_id +"&type=week";
+        $("#all")[0].href = "/product_models/"+id+"/prices?dpr_id="+ dpr_id +"&type=all";
         Highcharts.theme = {
             colors: ['#7cb5ec', '#f7a35c', '#90ee7e', '#7798BF', '#aaeeee', '#ff0066', '#eeaaee',
                 '#55BF3B', '#DF5353', '#7798BF', '#aaeeee'
@@ -142,12 +151,13 @@
         Highcharts.setOptions(Highcharts.theme);
 
         $.ajax({
-                data:{du:getdu(),id:getid()},
+                data:{du:du,id:id,dpr_id:dpr_id},
                 dataType:"json",
                 type:"get",
                 url:"/getCharts",
                 success:function (data) {
                     $("#largeloading").remove();
+                    var title = checktitle(data.result["title"]);
                     data = jQuery.parseJSON(data.result["charts"]);
                     var d2 = [];
                     $.each(data, function(i, v) {
@@ -165,7 +175,7 @@
 
                     Highcharts.chart('chart-container', {
                         title: {
-                            text: '价格趋势',
+                            text: title,
                         },
                         xAxis: {
                             type: 'datetime',
