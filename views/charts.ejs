@@ -16,7 +16,7 @@
     <meta name="csrf-token" content="2d3qXq6lw4kflWek0/I7IHEo49Eg34H1wCnpDnAUbdIcNkd0pV4fnmEGCvR/J50LONkvsezTIPbyemdPhp/r4g==" />
     <link rel="stylesheet" href="/stylesheets/appletuan.css">
     <script type="text/javascript" src='https://cdn.bootcss.com/device.js/0.2.7/device.js'></script>
-    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script type="text/javascript" src='/javascripts/highcharts.js'></script>
 </head>
 
 <body>
@@ -25,7 +25,8 @@
     <div class="box container">
         <div class="header">
             <div class="pull-right trends"><a  class="" id="week" href="">周趋势</a>&nbsp;&nbsp;<a class="" id="month" href="">月趋势</a>&nbsp;&nbsp;<a class="" id="all">全部趋势</a></div>
-            <a class="back_to_price_table" href="/">&lt; 返回报价单</a>
+            <a class="" id="month" href="/" style="color: #111;"><i class="glyphicon glyphicon-chevron-left"></i>返回报价单</a>
+            <!-- <button class="btn btn-default" href="/" style="margin-top: -6px;">返回报价单</button> -->
         </div>
         <div class="cell">
             <div id="chart-container"></div>
@@ -157,6 +158,11 @@
                 url:"/getCharts",
                 success:function (data) {
                     $("#largeloading").remove();
+                    if (!data.result["title"]) {
+                        $("#chart-container").text("没有找到此报价，正在返回报价单...");
+                        setTimeout('location.href = "/";',3000)
+                        return;
+                    }
                     var title = checktitle(data.result["title"]);
                     data = jQuery.parseJSON(data.result["charts"]);
                     var d2 = [];
