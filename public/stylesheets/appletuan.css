@@ -8172,9 +8172,20 @@ img.external {
   margin-bottom: 10px;
 }
 
+.price-footnote>img {
+  width: auto;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+
 @media only screen and (min-width: 320px) {
   /* line 150, /var/www/appletuan/app/assets/stylesheets/core.css.scss.erb */
   img.external {
+    max-width: 280px;
+  }
+  
+  .price-footnote>img {
     max-width: 280px;
   }
 
@@ -8186,6 +8197,9 @@ img.external {
 @media only screen and (min-width: 480px) {
   /* line 155, /var/www/appletuan/app/assets/stylesheets/core.css.scss.erb */
   img.external {
+    max-width: 440px;
+  }
+  .price-footnote>img {
     max-width: 440px;
   }
 
