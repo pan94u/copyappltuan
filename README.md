@@ -7,9 +7,9 @@
 报价支持历史趋势查询<br>
 自动适配移动端<br>
 --20180130更新：增加历史报价趋势
+<a href="http://price.ppsm.club">demo</a>
 # 页面截图
 报价页 
-![Image text](http://price.ppsm.club/img/price.png)
+![报价页](http://price.ppsm.club/img/price.png)
 价格趋势 
 ![Image text](http://price.ppsm.club/img/charts.png)
-<a href="http://price.ppsm.club">demo</a>
