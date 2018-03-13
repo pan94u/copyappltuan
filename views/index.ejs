@@ -513,7 +513,7 @@ a.back_to_price_table {
 		data:{cid:GetRequest()["cid"]},
 		dataType:"json",
 		type:"get",
-		url:"/getJobs",
+		url:"/getprice",
 		success:function (data) {
       document.title = "胖胖数码"+data.result["date"];
       $("#loadingtips").fadeOut(0,function(){
