@@ -437,7 +437,7 @@ a.back_to_price_table {
   <div class="alert alert-success" id="successtips" style="text-align: center;padding: 5px;margin: 0px auto;display: none;"><p>加载完成</p></div>
   <%- include("./header.ejs") %>
   <div class="container tips">
-  <div class="alert alert-warning" role="alert" style="padding: 10px;margin: 0px 0 0px 0;">本页面仅提供苹果系列报价，其他品牌报价请自行咨询微信！wx1：18656666788|wx2:ppsm2013|下单前请阅读<b>购买必读</b>！</div></div>
+  <div class="alert alert-warning" role="alert" style="padding: 10px;margin: 0px 0 0px 0;">本页面仅提供苹果系列报价，其他品牌报价请自行咨询微信！wx1：18656666788|wx2:ppsm2013|下单前请阅读<b>购买必读</b>！<a style="color: red" target="_blank" href="https://item.taobao.com/item.htm?spm=a230r.1.14.16.38b1f080XYGUI3&id=565892210427&ns=1&abbucket=4#detail">AirPods国行原封特价</a></div></div>
   <div style="text-align: center;" id="largeloading">
     <img src="img/loading-flight.gif" style="max-width: 100%;" />
   </div>
@@ -513,7 +513,7 @@ a.back_to_price_table {
 		data:{cid:GetRequest()["cid"]},
 		dataType:"json",
 		type:"get",
-		url:"/getprice",
+		url:"/getJobs",
 		success:function (data) {
       document.title = "胖胖数码"+data.result["date"];
       $("#loadingtips").fadeOut(0,function(){
