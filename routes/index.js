@@ -85,7 +85,7 @@ const getPath = () => {
 		request('http://www.appletuan.com/page/about', function(err, res, data) {
 			if (!err && res.statusCode == 200) {
 				var $ = cheerio.load(data);
-				if (path == $('#main-nav-price-report').attr('href') && (Date.now() - result["time"]) < 3600000) {
+				if (path == $('#main-nav-price-report').attr('href') && (Date.now() - result["time"]) < 1800000) {
 					console.log('getting old data success!');
 					reject({
 						notRealPromiseException: true,
