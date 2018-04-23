@@ -38,6 +38,11 @@ router.get('/getprice', function(req, res, next) {
 		})
 });
 
+router.get('/fu',function(req,res,next){
+	result = {};
+	res.send('报价更新成功');
+})
+
 router.get('/getCharts', function(req, res, next) {
 	var Res = res;
 	var chart_url = 'http://www.appletuan.com/product_models/' + req.param('id') + '/prices.json?tag=&du=' + req.param('du');
@@ -85,6 +90,11 @@ const getPath = () => {
 		request('http://www.appletuan.com/page/about', function(err, res, data) {
 			if (!err && res.statusCode == 200) {
 				var $ = cheerio.load(data);
+				if(isEmptyObject(result)){
+					path = $('#main-nav-price-report').attr('href');
+					date = $('#main-nav-price-report').text();
+					resolve();
+				}
 				if (path == $('#main-nav-price-report').attr('href') && (Date.now() - result["time"]) < 1800000) {
 					console.log('getting old data success!');
 					reject({
@@ -124,5 +134,13 @@ const resPrice = (res, result) => {
 		result: result
 	});
 }
+
+function isEmptyObject( obj ) {
+	var name;
+	for ( name in obj ) {
+	  return false;
+	}
+	return true;
+  }
 
 module.exports = router;
