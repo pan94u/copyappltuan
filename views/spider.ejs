@@ -2,7 +2,8 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta name="description" Content="今日报价,胖胖数码,胖胖数码今日报价,pan9">
+    <meta name="description" Content="胖胖数码苹果产品每日最新报价，今日最新价格，今日报价">
+    <meta name=”Keywords” Content=”今日报价,胖胖数码,胖胖数码今日报价,pan9″>
     <title>胖胖数码 - 今日报价</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <script type="text/javascript"  src='javascripts/jquery-3.2.1.min.js'></script>
@@ -439,42 +440,18 @@ a.back_to_price_table {
   <div class="container tips">
   <div class="alert alert-warning" role="alert" style="padding: 10px;margin: 0px 0 0px 0;">本页面仅提供苹果系列报价，其他品牌报价请自行咨询微信！wx1：18656666788|wx2:ppsm2013|下单前请阅读<b>购买必读</b>！<a style="color: red" target="_blank" href="https://item.taobao.com/item.htm?spm=a230r.1.14.16.38b1f080XYGUI3&id=565892210427&ns=1&abbucket=4#detail">AirPods国行原封特价</a></div></div>
   <div style="text-align: center;" id="largeloading">
-    <img src="img/loading-flight.gif" style="max-width: 100%;" alt="加载中……"/>
+    <!-- <img src="img/loading-flight.gif" style="max-width: 100%;" alt="加载中……"/> -->
   </div>
-  <div class="box container graybox1 tips"></div>
-
-<!-- <div class="modal fade" id="huishou" tabindex="-1" role="dialog" aria-labelledby="huishouLabel">
-  <div class="modal-dialog" role="document">
-  <div class="modal-content">
-    <div class="modal-header">
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      <h4 class="modal-title" id="myModalLabel">2018，大吉大利！</h4>
-    </div>
-    <div class="modal-body">
-      <img src="img/huishou.jpg" id="huishou" style="width: 100%;">
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-primary" data-dismiss="modal" aria-label="Close">长按换钱</button>
-    </div>
+  <div class="box container graybox1 tips">
+    <%- content %>
   </div>
-</div>
-</div>
-<div class="modal fade" id="newyear" tabindex="-1" role="dialog" aria-labelledby="newyearLabel">
-  <div class="modal-dialog" role="document">
-  <div class="modal-content">
-    <div class="modal-header">
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      <h4 class="modal-title" id="myModalLabel">祝您新年快乐！</h4>
-    </div>
-    <div class="modal-body">
-      <img src="img/newyear.jpg" id="newyear1" style="width: 100%;">
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-primary" data-dismiss="modal" aria-label="Close">年后见！</button>
-    </div>
-  </div>
-</div>
-</div> -->
+  <a href="http://www.baidu.com">百度</a>
+  <a href="http://www.chinaz.com">站长之家</a>
+  <a href="http://www.qq.com">腾讯</a>
+  <a href="http://www.aliyun.com">阿里云</a>
+  <a href="http://www.v2ex.com">V2EX</a>
+  <a href="http://www.bootstrap.com">bootstrap</a>
+  <a href="http://www.vue.org">vuejs</a>
   <%- include("./footer.ejs") %>
 </body>
 <script type="text/javascript">
@@ -508,34 +485,6 @@ a.back_to_price_table {
 		iDays = parseInt(Math.abs(oDate1 - oDate2) / 1000 / 60 / 60 / 24) //把相差的毫秒数转换为天数  
 		return iDays
 	}
-
-	$.ajax({
-		data:{cid:GetRequest()["cid"]},
-		dataType:"json",
-		type:"get",
-		url:"/getprice",
-		success:function (data) {
-      document.title = "胖胖数码"+data.result["date"];
-      $("#loadingtips").fadeOut(0,function(){
-        $("#loadingtips").removeClass("alert-warning");
-        $("#loadingtips").addClass("alert-success");
-        $("#loadingtips").text("加载完成!");
-        $("#loadingtips").fadeIn(1000,function(){
-          $("#loadingtips").fadeOut(1000);
-        });
-      });
-      $(".box")[0].innerHTML = "";
-      $(".graybox").remove();
-      $(".box").removeClass("graybox1");
-      $("#largeloading").remove();
-			$(".box").append(data.result["html"]);
-		},
-    error:function(err){
-      $("#tips").removeClass("alert-warning");
-      $("#tips").addClass("alert-danger");
-      $("#tips").text("获取失败!");
-    }
-	})
 
 	function GetRequest() {
 		var url = location.search; //获取url中"?"符后的字串

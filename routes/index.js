@@ -11,6 +11,13 @@ router.get('/', function(req, res, next) {
 	});
 });
 
+router.get('/spider', function(req, res, next) {
+	res.render('spider', {
+		title: '胖胖数码今日报价',
+		content: result["html"]
+	});
+});
+
 router.get('/attention', function(req, res, next) {
 	res.render('attention');
 });
