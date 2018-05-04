@@ -435,13 +435,10 @@ a.back_to_price_table {
 </head>
 <body>
   <%- date %>
-  <div class="alert alert-warning" id="loadingtips" style="text-align: center;padding: 5px;margin: 0px auto;"><p><img src="img/loading.gif"/>正在获取最新报价...</p></div>
-  <div class="alert alert-success" id="successtips" style="text-align: center;padding: 5px;margin: 0px auto;display: none;"><p>加载完成</p></div>
   <%- include("./header.ejs") %>
   <div class="container tips">
   <div class="alert alert-warning" role="alert" style="padding: 10px;margin: 0px 0 0px 0;">本页面仅提供苹果系列报价，其他品牌报价请自行咨询微信！wx1：18656666788|wx2:ppsm2013|下单前请阅读<b>购买必读</b>！<a style="color: red" target="_blank" href="https://item.taobao.com/item.htm?spm=a230r.1.14.16.38b1f080XYGUI3&id=565892210427&ns=1&abbucket=4#detail">AirPods国行原封特价</a></div></div>
   <div style="text-align: center;" id="largeloading">
-    <!-- <img src="img/loading-flight.gif" style="max-width: 100%;" alt="加载中……"/> -->
   </div>
   <div class="box container graybox1 tips">
     <%- content %>
@@ -453,52 +450,5 @@ a.back_to_price_table {
   <a href="http://www.v2ex.com">V2EX</a>
   <a href="http://www.bootstrap.com">bootstrap</a>
   <a href="http://www.vue.org">vuejs</a>
-  <%- include("./footer.ejs") %>
 </body>
-<script type="text/javascript">
-  // $('#newyear').modal({});
-  if(device.mobile()){  
-    $(".box").removeClass("container");
-    $(".box").addClass("container-fluid");
-  }
-
-
-  var heightvalue = $(window).height();
-  var widthvalue = $(window).width();
-  if (device.mobile()) {
-    $("#largeloading").css("margin-top",heightvalue/2-250+"px");
-  }
-  else{
-    $("#largeloading").css("margin-top",(heightvalue-130)/2-250+"px");  
-  }
-  
-  //$("#largeloading").css("left",widthvalue/2-330+"px");
-	var now = new Date();
-	var d = now.toLocaleDateString().split("/");
-	var d1 = d[0]+"-"+d[1]+"-"+d[2];
-	var d2 = "2017-09-10"
-	function DateDiff(sDate1, sDate2) { //sDate1和sDate2是2002-12-18格式  
-		var aDate, oDate1, oDate2, iDays
-		aDate = sDate1.split("-")
-		oDate1 = new Date(aDate[1] + '-' + aDate[2] + '-' + aDate[0]) //转换为12-18-2002格式  
-		aDate = sDate2.split("-")
-		oDate2 = new Date(aDate[1] + '-' + aDate[2] + '-' + aDate[0])
-		iDays = parseInt(Math.abs(oDate1 - oDate2) / 1000 / 60 / 60 / 24) //把相差的毫秒数转换为天数  
-		return iDays
-	}
-
-	function GetRequest() {
-		var url = location.search; //获取url中"?"符后的字串
-		var theRequest = new Object();
-		if (url.indexOf("?") != -1) {
-		  var str = url.substr(1);
-		  strs = str.split("&");
-		  for(var i = 0; i < strs.length; i ++) {
-		     theRequest[strs[i].split("=")[0]]=(strs[i].split("=")[1]);
-		  }
-		}
-   		return theRequest;
-	}
-</script>
-
 </html>
