@@ -15,7 +15,7 @@ router.get('/spider', function(req, res, next) {
 	res.render('spider', {
 		title: '胖胖数码今日报价',
 		content: result["html"],
-		date: result["date"]
+		date: date
 	});
 });
 
