@@ -11,6 +11,12 @@ router.get('/', function(req, res, next) {
 	});
 });
 
+router.get('/date', function(req, res, next) {
+	res.render('date', {
+		title: '倒计时'
+	});
+});
+
 router.get('/spider', function(req, res, next) {
 	res.render('spider', {
 		title: '胖胖数码今日报价',

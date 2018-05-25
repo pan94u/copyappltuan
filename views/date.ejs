@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="Keywords" Content="胖胖数码趋势图，报价趋势图,胖胖数码今日报价,pan9,18656666788">
+    <meta name="description" Content="胖胖数码报价趋势图，机器报价趋势图，Highcharts趋势图">
+    <title>
+        <%= title %>
+    </title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <script type="text/javascript" src='/javascripts/jquery-3.2.1.min.js'></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/stylesheets/appletuan.css">
+    <script type="text/javascript" src='https://cdn.bootcss.com/device.js/0.2.7/device.js'></script>
+</head>
+
+<body>
+    <%- include("./header.ejs") %>
+    <div class="box container">
+        <div class="header">
+            <h1 id="contdown"></h1>
+        </div>
+    </div>
+<script>
+    $(function() {
+    showtime();
+    function addZero(i){
+        if(i<10){
+            i = "0" + i;
+        }return i;
+    }
+    function showtime() {
+        var nowtime = new Date();
+        var endtime = new Date("2018/06/23");
+        var lefttime = parseInt((endtime.getTime() - nowtime.getTime()) / 1000);
+        var d = parseInt(lefttime / (24 * 60 * 60));
+        var h = parseInt(lefttime / (60 * 60) % 24);
+        var m = parseInt(lefttime / 60 % 60);
+        var s = parseInt(lefttime % 60);
+        h = addZero(h);
+        m = addZero(m);
+        s = addZero(s);
+        document.getElementById("contdown").innerHTML = "离胖胖的生日还有" + d + "天" + h + ":" + m + ":" + s;
+        if(lefttime<=0){
+            document.getElementById("contdown").innerHTML = "活动已结束";
+            return;
+        } 
+        setTimeout(showtime,1000);
+    }
+    })
+</script>
+</body>
+
+</html>
