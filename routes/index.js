@@ -135,7 +135,7 @@ const getPrice = () => {
 				var $ = cheerio.load(data);
 				$('.header').remove();
 				$('.product-series-heading span').text('(参考报价，根据市场价格随时更新，下单联系微信）');
-				var content = $('.col-md-8 .box').eq(1).html();
+				var content = $('.col-md-8 .box').eq(2).html();
 				result["html"] = content;
 				resolve(result);
 			}
