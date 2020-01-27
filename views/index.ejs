@@ -552,7 +552,7 @@
   </style>
 </head>
 
-<body class="memorial">
+<body>
   <div class="alert alert-warning" id="loadingtips" style="text-align: center;padding: 5px;margin: 0px auto;">
     <p><img src="img/loading.gif" />正在获取最新报价...</p>
   </div>
@@ -647,7 +647,7 @@
       $("#loadingtips").fadeOut(0, function () {
         $("#loadingtips").removeClass("alert-warning");
         $("#loadingtips").addClass("alert-success");
-        $("#loadingtips").text("传奇，永不落幕。MAMBA OUT!");
+        $("#loadingtips").text("加载完成");
         $("#loadingtips").fadeIn(2000, function () {
           $("#loadingtips").fadeOut(2000);
         });
