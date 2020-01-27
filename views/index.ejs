@@ -1,463 +1,577 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="Keywords" Content="今日报价,胖胖数码,胖胖数码今日报价,pan9,18656666788">
-    <meta name="description" Content="胖胖数码全新机报价，最专业、最实惠的数码批发平台。">
-    <title>胖胖数码今日报价</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <script type="text/javascript"  src='https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js'></script>
-    <script type="text/javascript"  src='https://cdn.bootcss.com/twitter-bootstrap/3.4.0/js/bootstrap.min.js'></script>
-    <link rel="stylesheet" href="https://cdn.bootcss.com/twitter-bootstrap/3.4.0/css/bootstrap.min.css">
-    <script type="text/javascript"  src='https://cdnjs.cloudflare.com/ajax/libs/device.js/0.2.7/device.min.js'></script>
-    
-
-<style type="text/css">
-.box .cell, .box .box-header {
-  padding: 10px;
-  border-bottom: 1px solid #F0F0F0;
-}
-
-@media (min-width: 1200px){
-  .container {
-    width: 960px;
-  }
-}
+  <meta charset="UTF-8">
+  <meta name="Keywords" Content="今日报价,胖胖数码,胖胖数码今日报价,pan9,18656666788">
+  <meta name="description" Content="胖胖数码全新机报价，最专业、最实惠的数码批发平台。">
+  <title>胖胖数码今日报价</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <script type="text/javascript" src='https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js'></script>
+  <script type="text/javascript" src='https://cdn.bootcss.com/twitter-bootstrap/3.4.0/js/bootstrap.min.js'></script>
+  <link rel="stylesheet" href="https://cdn.bootcss.com/twitter-bootstrap/3.4.0/css/bootstrap.min.css">
+  <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/device.js/0.2.7/device.min.js'></script>
 
 
-@media (min-width: 992px) {
-  .col-md-offset-2 {
-    width: 79%;
-  }
-}
-@media (min-width: 992px) {
-  .col-md-offset-2 {
-    margin-left: 9.6666666667%;
-  }
-}
-@media only screen and (max-width: 500px){
-  #contactme{
-    width: 260px;
-  }
-}
+  <style type="text/css">
+    .box .cell,
+    .box .box-header {
+      padding: 10px;
+      border-bottom: 1px solid #F0F0F0;
+    }
 
-.custom_logo {
-  padding-top:5px;
-  width: 130px;ƒ1
-}
+    body.memorial>* {
+      filter: grayscale(100%);
+      -webkit-filter: grayscale(100%);
+      -moz-filter: grayscale(100%);
+      -ms-filter: grayscale(100%);
+      -o-filter: grayscale(100%);
+      filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+      -webkit-filter: grayscale(1);
+    }
 
-blockquote {
-  border-left:3px solid #EEEEEE;
-  font-size:14px;
-  padding: 1px 20px;
-  margin:0 0 10px;
-}
-.price-info .model-name {
-  width: 130px;
-}
-.price-info .time-ago {
-  width: 100px;
-}
-.macbook .price-info .model-name {
-  width: 200px;
-}
-
-.home_node.active, .product-category-link.active {
-  background-color:#E2E2E2;
-  border-radius:3px;
-  color:#666666;
-  padding:5px;
-}
-
-.center {
-  padding:0;
-}
-.main-menu ul li {
-  margin:10px 12px 0 12px;
-}
+    @media (min-width: 1200px) {
+      .container {
+        width: 960px;
+      }
+    }
 
 
-.form-control {
-  border-radius: 0px;
-}
-.bookmark {
-  padding: 0px 3px;
-}
+    @media (min-width: 992px) {
+      .col-md-offset-2 {
+        width: 79%;
+      }
+    }
 
-.price-info {
-  font-family:Tahoma;
-}
-.pmi-1, .pmi-4, .pmi-7 {
-  background-color: #E1F1F7;
-}
-.pmi-2, .pmi-5, .pmi-8 {
-  background-color: #dff0d8;
-}
-.pmi-3, .pmi-6 {
-  background-color: #F5F2D9;
-}
+    @media (min-width: 992px) {
+      .col-md-offset-2 {
+        margin-left: 9.6666666667%;
+      }
+    }
+
+    @media only screen and (max-width: 500px) {
+      #contactme {
+        width: 260px;
+      }
+    }
+
+    .custom_logo {
+      padding-top: 5px;
+      width: 130px;
+      ƒ1
+    }
+
+    blockquote {
+      border-left: 3px solid #EEEEEE;
+      font-size: 14px;
+      padding: 1px 20px;
+      margin: 0 0 10px;
+    }
+
+    .price-info .model-name {
+      width: 130px;
+    }
+
+    .price-info .time-ago {
+      width: 100px;
+    }
+
+    .macbook .price-info .model-name {
+      width: 200px;
+    }
+
+    .home_node.active,
+    .product-category-link.active {
+      background-color: #E2E2E2;
+      border-radius: 3px;
+      color: #666666;
+      padding: 5px;
+    }
+
+    .center {
+      padding: 0;
+    }
+
+    .main-menu ul li {
+      margin: 10px 12px 0 12px;
+    }
 
 
-table.table-bordered tr th {
-  border:1px solid #fff;
-}
-table.price-report th td {
-  background-color:#eee;
-}
-.table-bordered > thead > tr > th, .table-bordered > thead > tr > td, .table-bordered > tbody > tr > th, .table-bordered > tbody > tr > td, .table-bordered > tfoot > tr > th, .table-bordered > tfoot > tr > td {
-  border:1px solid #FFFFFF;
-}
+    .form-control {
+      border-radius: 0px;
+    }
 
-p {
-  margin:3px 0;
-}
-.topic_content p, .reply p {
-  margin:0;
-}
-img.external {
-  margin:5px 0px;
-}
+    .bookmark {
+      padding: 0px 3px;
+    }
 
-.price-footnote>img {
-  margin:5px 0px;
-}
+    .price-info {
+      font-family: Tahoma;
+    }
 
-#sticky_topics, #latest_topics {
- padding: 6px;
-}
+    .pmi-1,
+    .pmi-4,
+    .pmi-7 {
+      background-color: #E1F1F7;
+    }
 
-.price-report {
- font-size: 12px;
-}
+    .pmi-2,
+    .pmi-5,
+    .pmi-8 {
+      background-color: #dff0d8;
+    }
 
-#Rightbar, #Rightbar a {
- font-size: 12px;
-}
+    .pmi-3,
+    .pmi-6 {
+      background-color: #F5F2D9;
+    }
 
-#wrap {
-    background-color: #E2E2E2;
-    padding-top: 25px;
-}
-#page-main {
-    padding-bottom: 5px;
-}
 
-.btn {
-  padding: 3px 10px;
-}
-#new_comment {
-  font-size: 12px;
-}
+    table.table-bordered tr th {
+      border: 1px solid #fff;
+    }
 
-.bookmark {
-  padding: 0px 3px;
-}
-a.profile_link {
-  font-size:12px;
-}
+    table.price-report th td {
+      background-color: #eee;
+    }
 
-.my-upyun-images .heading .add-btn {
-    border: 1px dashed #ccc;
-    padding: 0px 5px 2px 5px;
-    margin-right: 5px;
-}
-.my-upyun-images .heading {
-    margin: 0 auto;
-    width: 590px;
-    background-color: #fff;
-    margin-bottom: 20px;
-}
+    .table-bordered>thead>tr>th,
+    .table-bordered>thead>tr>td,
+    .table-bordered>tbody>tr>th,
+    .table-bordered>tbody>tr>td,
+    .table-bordered>tfoot>tr>th,
+    .table-bordered>tfoot>tr>td {
+      border: 1px solid #FFFFFF;
+    }
 
-.glyphicon-home {
-    margin-right: -10px;
-}
-.price-suffix {
-   padding-left: 5px;
-   color: #999;
-}
+    p {
+      margin: 3px 0;
+    }
 
-img#main-nav-homepage-icon {
-   margin-right: -3px;
-   margin-top: -5px;
-}
-img#sidebar-photo-lib-icon {
-   width: 19px;
-}
+    .topic_content p,
+    .reply p {
+      margin: 0;
+    }
 
-.main-menu {
-   border-bottom: 2px solid #efefef;
-}
-.main-menu a, a.home_node, a.product-category-link {
-   color: #333;
-}
-a.home_node, a.product-category-link {
-   font-size: 14px;
-}
-.home_node, .product-category-link {
-    margin: 0 6px;
-    padding: 5px 8px;
-}
-.main-menu ul li.active {
-   color: #000;
-   border-bottom: 2px solid #666;
-   margin-bottom: -2px;
-}
-.home_node.active, .product-category-link.active {
-    background-color: #E2E2E2;
-    border-radius: 3px;
-    color: #000;
-    padding: 5px 8px;
-}
+    img.external {
+      margin: 5px 0px;
+    }
 
-#chart-container {
-   padding: 15px 0 0 0;
-}
+    .price-footnote>img {
+      margin: 5px 0px;
+    }
 
-h2.topic-title {
-    font-size: 14px;
-}
-#sticky_topics {
-    border-top: 1px solid #ededed;
-}
+    #sticky_topics,
+    #latest_topics {
+      padding: 6px;
+    }
 
-#footer {
-   border-top: 2px solid #efefef;
-   background-color: #fcfcfc;
-}
-.box {
-    background: white;
-    border-radius: 3px;
-    margin-bottom: 20px;
-}
-.profile_link img {
-   border-radius: 4px;
-   max-width:46px;
-   max-height:46px;
-}
+    .price-report {
+      font-size: 12px;
+    }
 
-.user_group {
-   font-size:12px;
-}
-#sidebar-photo-lib-icon, #sidebar-edit-icon {
-    vertical-align: top;
-}
+    #Rightbar,
+    #Rightbar a {
+      font-size: 12px;
+    }
 
-.notifications .payload {
-    padding: 3px 10px;
-    line-height: 100%;
-}
-.notifications {
-   font-size:12px;
-}
-.copywrite blockquote {
-   font-size:12px;
-}
-.footer_logo {
-   float: right;
-   height: 50px;
-   position: relative;
-   right: 8px;
-   bottom: 18px;
-}
-.buying {
-   font-size:12px;
-}
+    #wrap {
+      background-color: #E2E2E2;
+      padding-top: 25px;
+    }
 
-.role_kefu {
-   background-color: rgba(252, 248, 227, 0.5);
-}
-.role_tuanyuan {
-  background-color: #f6f6ee;
-}
-img.erweima {
-  width: 265px;
-}
-.pager {
-    padding-left: 0;
-    margin: 0;
-    list-style: none;
-    text-align: center;
-}
-.pager li > a, .pager li > span {
-    display: inline-block;
-    padding: 2px 10px 1px 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 12px;
-    color: #778087;
-}
-.pagination {
-    margin: 5px 0 0 0;
-}
-.pagination > li > a, .pagination > li > span {
-    padding: 2px 10px;
-    color: #428bca;
-    background-color: #fff;
-    border: 1px solid #ddd;
-}
-.pagination > .active > a, .pagination > .active > a:hover, .pagination > .active > a:focus, .pagination > .active > span, .pagination > .active > span:hover, .pagination > .active > span:focus {
-    background-color: #AAB0C6;
-    border-color: #AAB0C6;
-}
+    #page-main {
+      padding-bottom: 5px;
+    }
 
-.search-field {
-    border: 1px solid #ededed;
-    margin: 12px 10px 0 13px;
-    width: 140px;
-    height: 25px;
-    font-size: 12px;
-    padding-left: 5px;
-}
-.cell .item-main {
-    padding-left: 56px;
-}
+    .btn {
+      padding: 3px 10px;
+    }
 
-.product-series-heading {
-    color: #333;
-    background-color: #efefef;
-}
-table.price-report {
-    margin: 0;
-    text-align: center;
-}
-.pmi-0 th {
-    text-align: center;
-}
-.table > thead > tr > th, .table > thead > tr > td, .table > tbody > tr > th, .table > tbody > tr > td, .table > tfoot > tr > th, .table > tfoot > tr > td {
-    padding: 5px;
-    vertical-align: top;
-}
+    #new_comment {
+      font-size: 12px;
+    }
 
-#footer #footer-main {
-   padding: 15px 10px 0px 5px;
-}
-#footer .copywrite {
-  margin-bottom: 15px;
-}
+    .bookmark {
+      padding: 0px 3px;
+    }
 
-.box .header {
-    padding: 12px 10px 11px 10px;
-    border-bottom: 1px solid #E2E2E2;
-}
-.exchange-btn {
-   margin-right: 11px;
-}
-.price-note {
-    color: #666;
-    padding: 0px;
-    background-color: #f2f2f2;
-   border-bottom: 1px solid #e9e9e9;
-}
-.price-footnote, .liucheng {
-   padding: 0px;
-   background-color: #fcfcfc;
-}
-.price-report .topic-meta {
-   color: #ff1f00;
-   font-size: 13px;
-}
-.alert {
-    padding: 15px;
-    margin:20px 0 10px 0;
-    border: 1px solid transparent;
-    border-radius: 4px;
-}
-#new_order {
-   margin-top: 10px;
-}
-.large_avatar {
-   margin-right: 10px;
-}
+    a.profile_link {
+      font-size: 12px;
+    }
 
-.navbar {
-    margin-bottom: 0;
-    border-bottom: 1px solid #eee;
-    background-color: #fcfcfc;
-}
-@media (min-width: 768px) {
-  .navbar {
-    border-radius: 0px;
-  }
-  .tips{
-    
-  }
-}
-.price-footnote {
-   text-align: center;
-}
+    .my-upyun-images .heading .add-btn {
+      border: 1px dashed #ccc;
+      padding: 0px 5px 2px 5px;
+      margin-right: 5px;
+    }
 
-#topics_index .cell {
-   padding: 7px 10px;
-}
-.home_node {
-   line-height: 30px;
-}
+    .my-upyun-images .heading {
+      margin: 0 auto;
+      width: 590px;
+      background-color: #fff;
+      margin-bottom: 20px;
+    }
 
-.pull-right a.dark:link {
-   font-size: 11px;
-}
+    .glyphicon-home {
+      margin-right: -10px;
+    }
 
-a.back_to_price_table {
-   font-size: 13px;
-   color: #666;
-}
-.trends a {
-    font-size: 13px;
-}
-.trends a.active {
-    font-size: 1.05em;
-    color: #111;
-}
+    .price-suffix {
+      padding-left: 5px;
+      color: #999;
+    }
 
-#wrap {
- /*  background: linear-gradient(to right, #ff700d, #ffaa00 30%, #e83e00 80%, #ff1f00);  */
- /*  background: linear-gradient(to right, #748394, #C8C8CA); */
-}
+    img#main-nav-homepage-icon {
+      margin-right: -3px;
+      margin-top: -5px;
+    }
 
-.graybox{
-    z-index: 998;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    opacity: 0.7;
-    background-color: #000;
-    padding-left: 0px;
-    padding-right: 0px;
-    margin-top: 90px;
-}
-.graybox1{
-    z-index: 998;
-    left: 0px;
-    top: 0px;
-    opacity: 0.7;
-    background-color: #000;
-    padding-left: 0px;
-    padding-right: 0px;
-}
-.container-fluid{
-  padding-left: 0px;
-  padding-right: 0px;
-}
-.tips{
-    padding-right: 0px;
-    padding-left: 0px;
-}
-</style>
+    img#sidebar-photo-lib-icon {
+      width: 19px;
+    }
+
+    .main-menu {
+      border-bottom: 2px solid #efefef;
+    }
+
+    .main-menu a,
+    a.home_node,
+    a.product-category-link {
+      color: #333;
+    }
+
+    a.home_node,
+    a.product-category-link {
+      font-size: 14px;
+    }
+
+    .home_node,
+    .product-category-link {
+      margin: 0 6px;
+      padding: 5px 8px;
+    }
+
+    .main-menu ul li.active {
+      color: #000;
+      border-bottom: 2px solid #666;
+      margin-bottom: -2px;
+    }
+
+    .home_node.active,
+    .product-category-link.active {
+      background-color: #E2E2E2;
+      border-radius: 3px;
+      color: #000;
+      padding: 5px 8px;
+    }
+
+    #chart-container {
+      padding: 15px 0 0 0;
+    }
+
+    h2.topic-title {
+      font-size: 14px;
+    }
+
+    #sticky_topics {
+      border-top: 1px solid #ededed;
+    }
+
+    #footer {
+      border-top: 2px solid #efefef;
+      background-color: #fcfcfc;
+    }
+
+    .box {
+      background: white;
+      border-radius: 3px;
+      margin-bottom: 20px;
+    }
+
+    .profile_link img {
+      border-radius: 4px;
+      max-width: 46px;
+      max-height: 46px;
+    }
+
+    .user_group {
+      font-size: 12px;
+    }
+
+    #sidebar-photo-lib-icon,
+    #sidebar-edit-icon {
+      vertical-align: top;
+    }
+
+    .notifications .payload {
+      padding: 3px 10px;
+      line-height: 100%;
+    }
+
+    .notifications {
+      font-size: 12px;
+    }
+
+    .copywrite blockquote {
+      font-size: 12px;
+    }
+
+    .footer_logo {
+      float: right;
+      height: 50px;
+      position: relative;
+      right: 8px;
+      bottom: 18px;
+    }
+
+    .buying {
+      font-size: 12px;
+    }
+
+    .role_kefu {
+      background-color: rgba(252, 248, 227, 0.5);
+    }
+
+    .role_tuanyuan {
+      background-color: #f6f6ee;
+    }
+
+    img.erweima {
+      width: 265px;
+    }
+
+    .pager {
+      padding-left: 0;
+      margin: 0;
+      list-style: none;
+      text-align: center;
+    }
+
+    .pager li>a,
+    .pager li>span {
+      display: inline-block;
+      padding: 2px 10px 1px 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 12px;
+      color: #778087;
+    }
+
+    .pagination {
+      margin: 5px 0 0 0;
+    }
+
+    .pagination>li>a,
+    .pagination>li>span {
+      padding: 2px 10px;
+      color: #428bca;
+      background-color: #fff;
+      border: 1px solid #ddd;
+    }
+
+    .pagination>.active>a,
+    .pagination>.active>a:hover,
+    .pagination>.active>a:focus,
+    .pagination>.active>span,
+    .pagination>.active>span:hover,
+    .pagination>.active>span:focus {
+      background-color: #AAB0C6;
+      border-color: #AAB0C6;
+    }
+
+    .search-field {
+      border: 1px solid #ededed;
+      margin: 12px 10px 0 13px;
+      width: 140px;
+      height: 25px;
+      font-size: 12px;
+      padding-left: 5px;
+    }
+
+    .cell .item-main {
+      padding-left: 56px;
+    }
+
+    .product-series-heading {
+      color: #333;
+      background-color: #efefef;
+    }
+
+    table.price-report {
+      margin: 0;
+      text-align: center;
+    }
+
+    .pmi-0 th {
+      text-align: center;
+    }
+
+    .table>thead>tr>th,
+    .table>thead>tr>td,
+    .table>tbody>tr>th,
+    .table>tbody>tr>td,
+    .table>tfoot>tr>th,
+    .table>tfoot>tr>td {
+      padding: 5px;
+      vertical-align: top;
+    }
+
+    #footer #footer-main {
+      padding: 15px 10px 0px 5px;
+    }
+
+    #footer .copywrite {
+      margin-bottom: 15px;
+    }
+
+    .box .header {
+      padding: 12px 10px 11px 10px;
+      border-bottom: 1px solid #E2E2E2;
+    }
+
+    .exchange-btn {
+      margin-right: 11px;
+    }
+
+    .price-note {
+      color: #666;
+      padding: 0px;
+      background-color: #f2f2f2;
+      border-bottom: 1px solid #e9e9e9;
+    }
+
+    .price-footnote,
+    .liucheng {
+      padding: 0px;
+      background-color: #fcfcfc;
+    }
+
+    .price-report .topic-meta {
+      color: #ff1f00;
+      font-size: 13px;
+    }
+
+    .alert {
+      padding: 15px;
+      margin: 20px 0 10px 0;
+      border: 1px solid transparent;
+      border-radius: 4px;
+    }
+
+    #new_order {
+      margin-top: 10px;
+    }
+
+    .large_avatar {
+      margin-right: 10px;
+    }
+
+    .navbar {
+      margin-bottom: 0;
+      border-bottom: 1px solid #eee;
+      background-color: #fcfcfc;
+    }
+
+    @media (min-width: 768px) {
+      .navbar {
+        border-radius: 0px;
+      }
+
+      .tips {}
+    }
+
+    .price-footnote {
+      text-align: center;
+    }
+
+    #topics_index .cell {
+      padding: 7px 10px;
+    }
+
+    .home_node {
+      line-height: 30px;
+    }
+
+    .pull-right a.dark:link {
+      font-size: 11px;
+    }
+
+    a.back_to_price_table {
+      font-size: 13px;
+      color: #666;
+    }
+
+    .trends a {
+      font-size: 13px;
+    }
+
+    .trends a.active {
+      font-size: 1.05em;
+      color: #111;
+    }
+
+    #wrap {
+      /*  background: linear-gradient(to right, #ff700d, #ffaa00 30%, #e83e00 80%, #ff1f00);  */
+      /*  background: linear-gradient(to right, #748394, #C8C8CA); */
+    }
+
+    .graybox {
+      z-index: 998;
+      left: 0px;
+      top: 0px;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      opacity: 0.7;
+      background-color: #000;
+      padding-left: 0px;
+      padding-right: 0px;
+      margin-top: 90px;
+    }
+
+    .graybox1 {
+      z-index: 998;
+      left: 0px;
+      top: 0px;
+      opacity: 0.7;
+      background-color: #000;
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+
+    .container-fluid {
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+
+    .tips {
+      padding-right: 0px;
+      padding-left: 0px;
+    }
+  </style>
 </head>
-<body>
-  <div class="alert alert-warning" id="loadingtips" style="text-align: center;padding: 5px;margin: 0px auto;"><p><img src="img/loading.gif"/>正在获取最新报价...</p></div>
-  <div class="alert alert-success" id="successtips" style="text-align: center;padding: 5px;margin: 0px auto;display: none;"><p>加载完成</p></div>
+
+<body class="memorial">
+  <div class="alert alert-warning" id="loadingtips" style="text-align: center;padding: 5px;margin: 0px auto;">
+    <p><img src="img/loading.gif" />正在获取最新报价...</p>
+  </div>
+  <div class="alert alert-success" id="successtips"
+    style="text-align: center;padding: 5px;margin: 0px auto;display: none;">
+    <p>加载完成</p>
+  </div>
   <%- include("./header.ejs") %>
   <div class="container tips">
-  <div class="alert alert-warning" role="alert" style="padding: 10px;margin: 0px 0 0px 0;">本页面仅提供苹果系列报价，其他品牌报价请自行咨询微信！wx1：18656666788|wx2:ppsm2013|下单前请阅读<b>购买必读</b>！<a style="color: red" target="_blank" href="https://item.taobao.com/item.htm?spm=a230r.1.14.16.38b1f080XYGUI3&id=565892210427&ns=1&abbucket=4#detail">AirPods国行原封特价</a></div></div>
+    <div class="alert alert-warning" role="alert" style="padding: 10px;margin: 0px 0 0px 0;">
+      本页面仅提供苹果系列报价，其他品牌报价请自行咨询微信！wx1：18656666788|wx2:ppsm2013|下单前请阅读<b>购买必读</b>！
+    </div>
+  </div>
   <div style="text-align: center;" id="largeloading">
-    <img src="img/loading.gif" style="max-width: 100%;" alt="加载中……"/>
+    <img src="img/loading.gif" style="max-width: 100%;" alt="加载中……" />
   </div>
   <div class="box container graybox1 tips"></div>
 
-<!-- <div class="modal fade" id="huishou" tabindex="-1" role="dialog" aria-labelledby="huishouLabel">
+  <!-- <div class="modal fade" id="huishou" tabindex="-1" role="dialog" aria-labelledby="huishouLabel">
   <div class="modal-dialog" role="document">
   <div class="modal-content">
     <div class="modal-header">
@@ -493,7 +607,7 @@ a.back_to_price_table {
 </body>
 <script type="text/javascript">
   // $('#newyear').modal({});
-  if(device.mobile()){  
+  if (device.mobile()) {
     $(".box").removeClass("container");
     $(".box").addClass("container-fluid");
   }
@@ -502,39 +616,39 @@ a.back_to_price_table {
   var heightvalue = $(window).height();
   var widthvalue = $(window).width();
   if (device.mobile()) {
-    $("#largeloading").css("margin-top",heightvalue/2-250+"px");
+    $("#largeloading").css("margin-top", heightvalue / 2 - 250 + "px");
   }
-  else{
-    $("#largeloading").css("margin-top",(heightvalue-130)/2-250+"px");  
+  else {
+    $("#largeloading").css("margin-top", (heightvalue - 130) / 2 - 250 + "px");
   }
-  
-  //$("#largeloading").css("left",widthvalue/2-330+"px");
-	var now = new Date();
-	var d = now.toLocaleDateString().split("/");
-	var d1 = d[0]+"-"+d[1]+"-"+d[2];
-	var d2 = "2017-09-10"
-	function DateDiff(sDate1, sDate2) { //sDate1和sDate2是2002-12-18格式  
-		var aDate, oDate1, oDate2, iDays
-		aDate = sDate1.split("-")
-		oDate1 = new Date(aDate[1] + '-' + aDate[2] + '-' + aDate[0]) //转换为12-18-2002格式  
-		aDate = sDate2.split("-")
-		oDate2 = new Date(aDate[1] + '-' + aDate[2] + '-' + aDate[0])
-		iDays = parseInt(Math.abs(oDate1 - oDate2) / 1000 / 60 / 60 / 24) //把相差的毫秒数转换为天数  
-		return iDays
-	}
 
-	$.ajax({
-		data:{cid:GetRequest()["cid"]},
-		dataType:"json",
-		type:"get",
-		url:"/getprice",
-		success:function (data) {
-      document.title = "胖胖数码"+data.result["date"];
-      $("#loadingtips").fadeOut(0,function(){
+  //$("#largeloading").css("left",widthvalue/2-330+"px");
+  var now = new Date();
+  var d = now.toLocaleDateString().split("/");
+  var d1 = d[0] + "-" + d[1] + "-" + d[2];
+  var d2 = "2017-09-10"
+  function DateDiff(sDate1, sDate2) { //sDate1和sDate2是2002-12-18格式  
+    var aDate, oDate1, oDate2, iDays
+    aDate = sDate1.split("-")
+    oDate1 = new Date(aDate[1] + '-' + aDate[2] + '-' + aDate[0]) //转换为12-18-2002格式  
+    aDate = sDate2.split("-")
+    oDate2 = new Date(aDate[1] + '-' + aDate[2] + '-' + aDate[0])
+    iDays = parseInt(Math.abs(oDate1 - oDate2) / 1000 / 60 / 60 / 24) //把相差的毫秒数转换为天数  
+    return iDays
+  }
+
+  $.ajax({
+    data: { cid: GetRequest()["cid"] },
+    dataType: "json",
+    type: "get",
+    url: "/getprice",
+    success: function (data) {
+      document.title = "胖胖数码" + data.result["date"];
+      $("#loadingtips").fadeOut(0, function () {
         $("#loadingtips").removeClass("alert-warning");
         $("#loadingtips").addClass("alert-success");
         $("#loadingtips").text("加载完成!");
-        $("#loadingtips").fadeIn(1000,function(){
+        $("#loadingtips").fadeIn(1000, function () {
           $("#loadingtips").fadeOut(1000);
         });
       });
@@ -542,27 +656,27 @@ a.back_to_price_table {
       $(".graybox").remove();
       $(".box").removeClass("graybox1");
       $("#largeloading").remove();
-			$(".box").append(data.result["html"]);
-		},
-    error:function(err){
+      $(".box").append(data.result["html"]);
+    },
+    error: function (err) {
       $("#tips").removeClass("alert-warning");
       $("#tips").addClass("alert-danger");
       $("#tips").text("获取失败!");
     }
-	})
+  })
 
-	function GetRequest() {
-		var url = location.search; //获取url中"?"符后的字串
-		var theRequest = new Object();
-		if (url.indexOf("?") != -1) {
-		  var str = url.substr(1);
-		  strs = str.split("&");
-		  for(var i = 0; i < strs.length; i ++) {
-		     theRequest[strs[i].split("=")[0]]=(strs[i].split("=")[1]);
-		  }
-		}
-   		return theRequest;
-	}
+  function GetRequest() {
+    var url = location.search; //获取url中"?"符后的字串
+    var theRequest = new Object();
+    if (url.indexOf("?") != -1) {
+      var str = url.substr(1);
+      strs = str.split("&");
+      for (var i = 0; i < strs.length; i++) {
+        theRequest[strs[i].split("=")[0]] = (strs[i].split("=")[1]);
+      }
+    }
+    return theRequest;
+  }
 </script>
 
 </html>
